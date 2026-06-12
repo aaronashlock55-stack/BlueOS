@@ -27,6 +27,7 @@
             :color="`${is_armed ? 'error' : 'success'}`"
             @change="armDisarmSwitchChange"
           />
+          <motor-setup-wizard :can-test="can_test" class="mr-2" />
           <motor-detection />
         </div>
         <v-row dense>
@@ -111,6 +112,7 @@ import Vue from 'vue'
 import ServoFunctionEditorDialog from '@/components/parameter-editor/ServoFunctionEditorDialog.vue'
 import { loadMotorNames, saveMotorNames } from '@/components/vehiclesetup/motor-names'
 import MotorDetection from '@/components/vehiclesetup/MotorDetection.vue'
+import MotorSetupWizard from '@/components/vehiclesetup/MotorSetupWizard.vue'
 import VehicleViewer from '@/components/vehiclesetup/viewers/VehicleViewer.vue'
 import {
   MavModeFlag,
@@ -133,6 +135,7 @@ export default Vue.extend({
     ServoFunctionEditorDialog,
     VehicleViewer,
     MotorDetection,
+    MotorSetupWizard,
   },
   data() {
     return {
