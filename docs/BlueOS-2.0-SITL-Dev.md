@@ -24,6 +24,12 @@ So you run the frontend like this, pointing it at a BlueOS backend:
 
 ```bash
 cd core/frontend
+
+# convenience script — defaults to http://blueos.local/, override as needed:
+yarn dev:sitl
+BLUEOS_ADDRESS=http://192.168.2.2/ yarn dev:sitl   # explicit address / IP
+
+# or the plain form:
 BLUEOS_ADDRESS=http://<backend-address>/ yarn dev   # → http://localhost:8080
 ```
 
@@ -93,6 +99,7 @@ and run the frontend with `BLUEOS_ADDRESS=http://localhost/ yarn dev`.
 # 1. Have a BlueOS backend with Autopilot = SITL (a spare Pi is easiest)
 # 2. Point the dev frontend at it:
 cd core/frontend
-BLUEOS_ADDRESS=http://blueos.local/ yarn dev
+yarn dev:sitl                                 # defaults to http://blueos.local/
+# (or: BLUEOS_ADDRESS=http://<ip>/ yarn dev:sitl)
 # 3. http://localhost:8080 → Vehicle Setup → Motors
 ```
