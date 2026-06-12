@@ -69,7 +69,11 @@ cd core/frontend
 yarn install      # first time
 yarn dev          # http://localhost:8080  → Vehicle Setup → Motors
 ```
-Live motor data / param writes require a connected vehicle or BlueOS backend.
+The Motors tab needs a backend **with a vehicle** to populate (the ports come
+from `SERVOn_FUNCTION` params), so a bare `yarn dev` shows "backend offline" and
+a loading spinner. To preview it with **no rover**, point the dev server at a
+BlueOS backend running a **SITL** (simulated) autopilot — see
+`docs/BlueOS-2.0-SITL-Dev.md`.
 
 ## Hardware verification checklist (Navigator + ArduSub)
 
