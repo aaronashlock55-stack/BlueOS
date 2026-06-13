@@ -54,6 +54,7 @@ import VehicleViewer from '@/components/vehiclesetup/viewers/VehicleViewer.vue'
 import GripperInfo from './overview/gripper.vue'
 import LeakInfo from './overview/LeakInfo.vue'
 import LightsInfo from './overview/LightsInfo.vue'
+import MotorsInfo from './overview/MotorsInfo.vue'
 import PingInfo from './overview/PingInfo.vue'
 import PowerInfo from './overview/PowerInfo.vue'
 import VideoOverview from './overview/VideoOverview.vue'
@@ -65,6 +66,7 @@ export default Vue.extend({
     OnboardSensors,
     VehicleInfo,
     GripperInfo,
+    MotorsInfo,
     PingInfo,
     PowerInfo,
     LightsInfo,
@@ -75,6 +77,7 @@ export default Vue.extend({
     return {
       highlight: null as string | null,
       bottomComponents: [
+        'motors-info',
         'ping-info',
         'video-overview',
         'lights-info',

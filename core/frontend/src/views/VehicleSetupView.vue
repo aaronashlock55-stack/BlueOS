@@ -36,6 +36,7 @@ import Vue from 'vue'
 import { fetchFirmwareVehicleType, fetchVehicleType } from '@/components/autopilot/AutopilotManagerUpdater'
 import ParameterLoadingSpinner from '@/components/utils/ParameterLoadingSpinner.vue'
 import Configure from '@/components/vehiclesetup/Configure.vue'
+import MotorConfig from '@/components/vehiclesetup/MotorConfig.vue'
 import PwmSetup from '@/components/vehiclesetup/PwmSetup.vue'
 import setupOverview from '@/components/vehiclesetup/SetupOverview.vue'
 import { OneMoreTime } from '@/one-more-time'
@@ -51,6 +52,7 @@ export default Vue.extend({
   name: 'VehicleSetupView',
   components: {
     PwmSetup,
+    MotorConfig,
     setupOverview,
     Configure,
     ParameterLoadingSpinner,
@@ -62,7 +64,10 @@ export default Vue.extend({
           title: 'Overview', icon: 'mdi-view-dashboard-variant-outline', value: 'overview', component: setupOverview,
         },
         {
-          title: 'PWM Outputs', icon: 'mdi-fan', value: 'pwm_outputs', component: PwmSetup,
+          title: 'Motors', icon: 'mdi-fan', value: 'motors', component: MotorConfig,
+        },
+        {
+          title: 'PWM Outputs', icon: 'mdi-fan-chevron', value: 'pwm_outputs', component: PwmSetup,
         },
         {
           title: 'Configure', icon: 'mdi-cog', value: 'configure', component: Configure,
